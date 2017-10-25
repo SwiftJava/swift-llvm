@@ -97,7 +97,7 @@ ARMBaseRegisterInfo::getCalleeSavedRegs(const MachineFunction *MF) const {
     if (STI.isTargetDarwin())
       return CSR_iOS_SwiftError_SaveList;
 
-    return //UseSplitPush ? CSR_AAPCS_SplitPush_SwiftError_SaveList :
+    return UseSplitPush ? CSR_AAPCS_SplitPush_SwiftError_SaveList :
       CSR_AAPCS_SwiftError_SaveList;
   }
 
